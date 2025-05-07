@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎂 Happy Birthday</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Sacramento&family=Rochester&family=Orbitron&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f8e9f1, #f3e1f0);
+      font-family: 'Sacramento', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem;
+      color: #444;
+      flex-direction: column;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 800px;
+      padding: 2rem;
+      display: none;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #ff4d6d;
+      margin-bottom: 1rem;
+    }
+
+    .message-container {
+      margin-bottom: 1.5rem;
+      padding: 1.2rem;
+      border-radius: 15px;
+      background-color: #fce0eb;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .message-container h2 {
+      font-family: 'Rochester', cursive;
+      font-size: 2.2rem;
+      color: #ff4d6d;
+      margin-bottom: 0.8rem;
+    }
+
+    .message-container .message {
+      font-size: 1.4rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .photo-upload {
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 3px solid #ff4d6d;
+    }
+
+    .photo-upload img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .spotify {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      margin-top: 2rem;
+    }
+
+    #countdown {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      margin-top: 2rem;
+      color: #ff4d6d;
+      background-color: white;
+      padding: 1rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 1rem;
+      color: #aaa;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="countdown">생일 축하해요 🎉</div>
+
+  <div class="card" id="birthday-card">
+    <h1>🎂 Happy Birthday, Sis! 🥳</h1>
+
+    <div class="message-container">
+      <h2>To the Bestest Friend & Sister 💖</h2>
+      <p class="message">
+        You are my partner in crime, my rock, and the one who always makes life brighter. Here's to a day as special as you are! <br />
+        Thank you for being my best friend and sister. I love you so much! 🥰
+      </p>
+    </div>
+
+    <div class="message-container">
+      <h2>A Special Note Just for You 🌸</h2>
+      <p class="message">
+        "On your special day, I wish you happiness beyond measure. 🎁<br />
+        May your heart always be full of joy and may we continue to create beautiful memories together." 💐🎉
+      </p>
+    </div>
+
+    <div class="message-container">
+      <h2>From the Heart ❤️</h2>
+      <p class="message">
+        You’ve been there through thick and thin, and today I just want to say THANK YOU for being so amazing. <br />
+        I’m lucky to have you as both my sister and my best friend. Let’s make today unforgettable! 🎂💖
+      </p>
+    </div>
+
+    <div class="photo-upload">
+      <img src="https://via.placeholder.com/600x400?text=Your+Photo+Here" alt="Your Birthday Photo" />
+    </div>
+
+    <div class="spotify">
+      <iframe style="border-radius:12px" 
+        src="https://open.spotify.com/embed/track/2ATrx8hOTXAZCBdlf6jKhs?utm_source=generator" 
+        width="100%" 
+        height="152" 
+        frameborder="0" 
+        allowfullscreen 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <footer>
+      Made with ❤️ to the one who lights up my world. 🌸
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+  <script>
+    const targetDate = new Date();
+    targetDate.setHours(0, 0, 0, 0);
+    targetDate.setDate(targetDate.getDate() + 1);
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        document.getElementById("countdown").style.display = "none";
+        document.getElementById("birthday-card").style.display = "block";
+        confetti({ particleCount: 200, spread: 90, origin: { y: 0.6 } });
+        clearInterval(timerInterval);
+      } else {
+        const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+        const mins = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+        const secs = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+        document.getElementById("countdown").innerText = `🎉 생일까지 남은 시간: ${hours}:${mins}:${secs}`;
+      }
+    }
+
+    const timerInterval = setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
