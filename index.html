@@ -19,10 +19,9 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 2rem;
+      padding: 1rem;
       color: #444;
       flex-direction: column;
-      height: 100vh;
       text-align: center;
     }
 
@@ -31,50 +30,53 @@
       border-radius: 24px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       width: 100%;
-      max-width: 800px;
-      padding: 2rem;
+      max-width: 600px;
+      padding: 1.5rem;
       display: none;
       animation: fadeIn 1.5s ease-in-out;
     }
 
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 3rem;
+      font-size: 2.5rem;
       color: #ff4d6d;
       margin-bottom: 1rem;
     }
 
     .message-container {
-      margin-bottom: 1.5rem;
-      padding: 1.2rem;
+      margin-bottom: 1.2rem;
+      padding: 1rem;
       border-radius: 15px;
       background-color: #fce0eb;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     }
 
     .message-container h2 {
       font-family: 'Rochester', cursive;
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       color: #ff4d6d;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.5rem;
     }
 
     .message-container .message {
-      font-size: 1.4rem;
-      line-height: 1.6;
+      font-size: 1.1rem;
+      line-height: 1.5;
       color: #555;
     }
 
-    .photo-upload {
-      margin: 2rem 0;
-      border-radius: 12px;
+    .photo-circle {
+      margin: 2rem auto;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
       overflow: hidden;
-      border: 3px solid #ff4d6d;
+      border: 5px solid #ff4d6d;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     }
 
-    .photo-upload img {
+    .photo-circle img {
       width: 100%;
-      border-radius: 12px;
+      height: 100%;
       object-fit: cover;
     }
 
@@ -82,29 +84,53 @@
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-      margin-top: 2rem;
+      margin-top: 1.5rem;
     }
 
     #countdown {
       font-family: 'Orbitron', sans-serif;
-      font-size: 2.5rem;
+      font-size: 2rem;
       margin-top: 2rem;
       color: #ff4d6d;
       background-color: white;
-      padding: 1rem 2rem;
+      padding: 1rem 1.5rem;
       border-radius: 16px;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     }
 
     footer {
-      margin-top: 2rem;
-      font-size: 1rem;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
       color: #aaa;
     }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .message-container h2 {
+        font-size: 1.5rem;
+      }
+
+      .message-container .message {
+        font-size: 1rem;
+      }
+
+      #countdown {
+        font-size: 1.5rem;
+        padding: 0.8rem 1rem;
+      }
+
+      .photo-circle {
+        width: 180px;
+        height: 180px;
+      }
     }
   </style>
 </head>
@@ -118,7 +144,7 @@
     <div class="message-container">
       <h2>To the Bestest Friend & Sister 💖</h2>
       <p class="message">
-        You are my partner in crime, my rock, and the one who always makes life brighter. Here's to a day as special as you are! <br />
+        You are my partner in crime, my rock, and the one who always makes life brighter. <br>
         Thank you for being my best friend and sister. I love you so much! 🥰
       </p>
     </div>
@@ -126,7 +152,7 @@
     <div class="message-container">
       <h2>A Special Note Just for You 🌸</h2>
       <p class="message">
-        "On your special day, I wish you happiness beyond measure. 🎁<br />
+        "On your special day, I wish you happiness beyond measure. 🎁<br>
         May your heart always be full of joy and may we continue to create beautiful memories together." 💐🎉
       </p>
     </div>
@@ -134,18 +160,18 @@
     <div class="message-container">
       <h2>From the Heart ❤️</h2>
       <p class="message">
-        You’ve been there through thick and thin, and today I just want to say THANK YOU for being so amazing. <br />
+        You’ve been there through thick and thin, and today I just want to say THANK YOU for being so amazing. <br>
         I’m lucky to have you as both my sister and my best friend. Let’s make today unforgettable! 🎂💖
       </p>
     </div>
 
-    <div class="photo-upload">
-      <img src="https://via.placeholder.com/600x400?text=Your+Photo+Here" alt="Your Birthday Photo" />
+    <div class="photo-circle">
+      <img src="Pic.png" alt="Your Birthday Photo" />
     </div>
 
     <div class="spotify">
-      <iframe style="border-radius:12px" 
-        src="https://open.spotify.com/embed/track/2ATrx8hOTXAZCBdlf6jKhs?utm_source=generator" 
+      <iframe style="border-radius:12px"
+        src="https://open.spotify.com/embed/track/2ATrx8hOTXAZCBdlf6jKhs?utm_source=generator"
         width="100%" 
         height="152" 
         frameborder="0" 
@@ -163,29 +189,25 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 
   <script>
-    const targetDate = new Date();
-    targetDate.setHours(0, 0, 0, 0);
-    targetDate.setDate(targetDate.getDate() + 1);
+    const countdown = document.getElementById("countdown");
+    const card = document.getElementById("birthday-card");
 
-    function updateCountdown() {
-      const now = new Date();
-      const diff = targetDate - now;
+    // Countdown duration in seconds
+    const duration = 3;
+    let remaining = duration;
 
-      if (diff <= 0) {
-        document.getElementById("countdown").style.display = "none";
-        document.getElementById("birthday-card").style.display = "block";
+    const timer = setInterval(() => {
+      if (remaining <= 0) {
+        clearInterval(timer);
+        countdown.style.display = "none";
+        card.style.display = "block";
         confetti({ particleCount: 200, spread: 90, origin: { y: 0.6 } });
-        clearInterval(timerInterval);
       } else {
-        const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
-        const mins = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-        const secs = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
-        document.getElementById("countdown").innerText = `🎉 생일까지 남은 시간: ${hours}:${mins}:${secs}`;
+        countdown.innerText = `🎉 생일까지 남은 시간: 00:00:0${remaining}`;
+        remaining--;
       }
-    }
-
-    const timerInterval = setInterval(updateCountdown, 1000);
-    updateCountdown();
+    }, 1000);
   </script>
+
 </body>
 </html>
